@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Art Collection</title>
+    <link rel="stylesheet" href="/css/queryin.css">
+  </head>
+  
+
+  <style>
+    body
+    {
+        background-image: url(http://2.bp.blogspot.com/-du5jH3QXhHs/VmbvGLt4-6I/AAAAAAAAAEQ/eR25zwvqQCI/s1600/queries.jpg-);
+       background-size: 70%;
+       background-repeat: repeat;
+    }
+    </style>
+<body>
+  <body>
+    
+    <h1>You can type SQL Queries here and see the output.</h1>
+    <form action="/queries" method="POST">
+      <div>
+        <label for="query">Enter your query</label>
+        <textarea style="color :rgb(136, 0, 255);"
+          name="query"
+          id="query"
+          cols="30"
+          rows="10"
+          placeholder="Enter your query here"
+        ></textarea>
+        <button>Run</button>
+      </div>
+    </form>
+    <a href="/">Home</a>
+  </body>
+</html>

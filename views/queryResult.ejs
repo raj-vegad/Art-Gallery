@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Art Collection</title>
+    
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+    </style>
+    <link rel="stylesheet" href="css/queryin.css">
+  </head>
+  <body>
+    <a href="/queries" style="color :rgb(31, 1, 35);"> Back to Queries </a>
+    <h2>         </h2>
+    <a href="/" style="color :rgb(31, 1, 35); ">Back to Home</a>
+    
+    <% if(err){ %>
+    <h1>Something went wrong with the query</h1>
+    <h2>Here is the error:</h2>
+    <div><%= error %></div>
+    <% }else{ %>
+    <h1>Executed Successfully.Here is the result:</h1>
+    <table>
+      <tr>
+        <% for(let r in rows[0]){ %>
+        <th><%= r %></th>
+        <% } %>
+      </tr>
+      <% for(let row of rows) {%>
+      <tr>
+        <% for(let r in row) {%>
+        <th><%= row[`${r}`] %></th>
+        <% } %>
+      </tr>
+      <% } %> <% }%>
+    </table>
+  </body>
+</html>

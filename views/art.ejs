@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Collection</title>
+    <style>
+        table,
+        tr,
+        th {
+            border: 1px solid black;
+        }
+    </style>
+    <link rel="stylesheet" href="css/art.css">
+</head>
+<style>
+    body
+    {
+        background-image: url(https://th.bing.com/th/id/R.060f944431cb08817ccb63270d779dd8?rik=oYx1t3K0iG03yg&riu=http%3a%2f%2fclipart-library.com%2fimage_gallery2%2fOnline-Shopping-PNG-Clipart.png&ehk=U%2fAisEaCnnhbxqug0w8%2bmLg5sD4GVTLYyr0x1rn427o%3d&risl=&pid=ImgRaw&r=0);
+       background-size: 70%;
+       background-repeat: repeat;
+    }
+    </style>
+<body>
+    <a href="/">Home</a>
+    
+    <h1>Art Collection</h1>
+    <h2><a href="/art/addArt">Add collection</a></h2>
+    <table>
+        <tr>
+            <th>
+                art_id
+            </th>
+            <th>
+                art_name
+            </th>
+            <th>
+                artist_id
+            </th>
+            <th>art_type</th>
+            <th>art_description</th>
+            <th>base_price</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <% for(let a of art){ %>
+            <tr>
+                <th>
+                    <%= a.art_id %>
+                </th>
+                <th>
+                    <%= a.art_name %>
+                </th>
+                <th>
+                    <%= a.artist_id %>
+                </th>
+                <th>
+                    <% a.art_type %>
+                </th>
+                <th>
+                    <%= a.art_description %>
+                </th>
+                <th>
+                    <%= a.base_price %>
+                </th>
+                <th>
+                    <a href="/art/editArt/<%= a.art_id %> ">Edit</a>
+                </th>
+                <th>
+                    <form action="/art/deleteArt/<%= a.art_id %>?_method=DELETE " method="POST">
+                        <button>Delete</button></form>
+                    
+                </th>
+                <% } %>
+            </tr>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Collections</title>
+    <link rel="stylesheet" href="css/art.css">
+</head>
+<body>
+    <h1>Edit Collection</h1>
+    <form action="/art/editArt/<%= art.art_id %>?_method=PATCH" method="POST">
+        <div>
+            <label for="art_name">art_name</label>
+            <input type="text" name="art_name" id="art_name" placeholder="art_name" value="<%=art.art_name %> ">
+        </div>
+        <div>
+            <label for="artist_id">artist_id</label>
+            <input type="text" name="artist_id" id="artist_id" placeholder="artist_id" value="<%=art.artist_id  %> ">
+        </div>
+        <div>
+            <label for="art_type">art_type</label>
+            <input type="text" name="art_type" id="art_type" placeholder="art_type" value="<%= art.art_type %> ">
+        </div>
+        <div>
+            <label for="art_description'">art_description</label>
+            <input type="text" name="art_description" id="art_description" placeholder="art_description" value="<%= art.art_description %>">
+        </div>
+        <div>
+            <label for="base_price">base_price</label>
+            <input type="number" name="base_price" id="base_price" placeholder="base_price" value="<%= art.base_price %> ">
+        </div>
+        <button>Edit Collection</button>
+    </form>
+</body>
+</html>

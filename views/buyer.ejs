@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Colllections</title>
+    <style>
+        table,
+        tr,
+        th {
+            border: 1px solid black;
+        }
+    </style>
+    <link rel="stylesheet" href="css/art.css">
+</head>
+<body>
+    <h2><a href="/">Home</a></h1>
+    <h2><a href="/buyer/addBuyer">Add buyer</a></h2>
+    <h1>Buyers</h1>
+    <table>
+        <tr>
+            <th>buyer_id</th>
+            <th>
+                buyer_name
+            </th>
+            <th>
+                login_password
+            </th>
+            <th>
+                Edit
+            </th>
+            <th>
+                Delete
+            </th>
+        </tr> 
+        <% for(let buyer of buyers) {%>
+            <tr>
+                <th>
+                    <%= buyer.buyer_id %> 
+                </th>
+                <th>
+                    <%= buyer.buyer_name %> 
+                </th>
+                <th>
+                    <%= buyer.login_password %> 
+                </th>
+                <th>
+                    <a href="/buyer/editBuyer/<%=buyer.buyer_id%>">Edit</a>
+                </th>
+                <th>
+                    <form action="/buyer/deleteBuyer/<%= buyer.buyer_id %>?_method=DELETE " method="post">
+                        <button>Delete</button>
+                    </form>
+                </th>
+            </tr>
+            <% } %>  
+    </table>
+</body>
+</html>

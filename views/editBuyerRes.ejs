@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Collection</title>
+    
+</head>
+<body>
+    <% if(err){ %>
+        <h1>Somehting went wrong.Here is the error:</h1>
+        <div>
+            <%= error %> 
+        </div>
+        <% }else{ %>
+    <h1>Buyer was edited successfully.</h1>
+    <h2><a href="/">Home</a></h1>
+    <h2><a href="/buyer">All buyers</a></h2>
+    <% } %> 
+</body>
+</html>
